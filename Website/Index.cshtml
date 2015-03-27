@@ -1,4 +1,7 @@
-﻿@using System.Web.Caching;
+﻿@*HELLO WORLD*@
+
+
+@using System.Web.Caching;
 @{
     Page.Title = Blog.Title;
     Layout = "~/themes/" + Blog.Theme + "/_Layout.cshtml";
@@ -45,7 +48,7 @@
 	
 	@AntiForgery.GetHtml()
 
-    if ( !Request.IsLocal && !User.Identity.IsAuthenticated )
+    if (!Request.IsLocal && !User.Identity.IsAuthenticated)
     {
         Response.Cache.AppendCacheExtension("max-age=0");
         Response.Cache.SetValidUntilExpires(true);
@@ -57,7 +60,9 @@
         Response.AddCacheDependency(new CacheDependency(Server.MapPath("~/css")));
         Response.AddCacheDependency(new CacheDependency(Server.MapPath("~/themes/" + Blog.Theme)));
 
-        
+
         Blog.SetConditionalGetHeaders(lastModified.ToLocalTime(), Context);
     }
+
+   
 }
