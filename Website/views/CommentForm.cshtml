@@ -1,7 +1,7 @@
 ﻿@using System.Configuration;
 @{
     var path = !string.IsNullOrWhiteSpace(Blog.BlogPath) ? "/" + Blog.BlogPath : "";
-    var disqusShortname = System.Configuration.ConfigurationManager.AppSettings["disqus_shortname"];
+    var disqusShortname = ConfigurationManager.AppSettings["disqus_shortname"];
 }
 
 
