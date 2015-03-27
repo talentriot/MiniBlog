@@ -1,13 +1,14 @@
-﻿@{
+﻿@using System.Configuration;
+@{
     var path = !string.IsNullOrWhiteSpace(Blog.BlogPath) ? "/" + Blog.BlogPath : "";
+    var disqusShortname = System.Configuration.ConfigurationManager.AppSettings["disqus_shortname"];
 }
 
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'myblogplan';
-    var shortname = System.Configuration.ConfigurationManager.AppSettings["disqus_shortname"];
+    var shortname = '@disqusShortname';
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function () {
