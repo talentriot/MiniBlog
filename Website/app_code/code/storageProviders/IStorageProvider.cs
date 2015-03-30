@@ -6,6 +6,6 @@
 public interface IStorageProvider
 {
     List<Post> GetAllPosts();
-    void Save(Post post);
+    StorageSaveStatus Save(Post post);
     void Delete(Post post);
 }
