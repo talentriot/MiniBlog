@@ -5,7 +5,7 @@ using System.Web.Hosting;
 public static class Storage
 {
     private static readonly IStorageProvider _storageProvider =
-        new LocalXmlFileSystemStorage(HostingEnvironment.MapPath("~/posts/"));
+        new AzureFileSystemStorage();
 
     public static List<Post> GetAllPosts()
     {
