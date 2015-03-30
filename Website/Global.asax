@@ -27,6 +27,13 @@
         }
     }
 
+    public void Application_Start()
+    {
+        AzureStorageService.SetupAzureStorage("UseDevelopmentStorage=true");
+    }
+    
+    
+    
     public void Application_OnError()
     {
         var request = HttpContext.Current.Request;
